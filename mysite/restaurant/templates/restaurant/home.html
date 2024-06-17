@@ -1,0 +1,26 @@
+<!-- templates/restaurant/home.html -->
+{% extends 'restaurant/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="text-center">
+    <img src="{% static 'restaurant/media/logo.png' %}" alt="El Comilón Restaurant Logo">
+    <h1>Menú</h1>
+    <a href="#" class="btn btn-primary">Menú</a>
+    <a href="#" class="btn btn-primary">Pedir a domicilio</a>
+    <a href="#" class="btn btn-primary">Iniciar sesión</a>
+    <a href="#" class="btn btn-primary">Contacto</a>
+    <a href="#" class="btn btn-primary">Estado de pedido</a>
+</div>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form method="post">
+                {% csrf_token %}
+                {{ formcrispy }}
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
